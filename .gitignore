@@ -3,8 +3,10 @@ __pycache__/
 *.py[cod]
 *$py.class
 
-# Dataset
+# Dataset and folders that shouldn't upload
 dataset
+checkpoints
+output
 
 # C extensions
 *.so
