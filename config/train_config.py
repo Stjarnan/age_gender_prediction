@@ -21,7 +21,7 @@ BATCH_SIZE = 128
 NUM_DEVICES = 1
 
 # check to see if we are working with age or gender
-if DATASET_TYPE == "age":
+if DATASET_TYPE == "gender":
 	# define the number of labels for the age dataset
 	# define the path to the label encoder
 	NUM_CLASSES = 8
