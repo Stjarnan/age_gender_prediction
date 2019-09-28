@@ -1,7 +1,7 @@
 from os import path
 
 # define the type of dataset we are training ( Age or gender)
-DATASET_TYPE = "age"
+DATASET_TYPE = "gender"
 
 # define the base paths to the dataset and output path
 BASE_PATH = path.sep.join(["dataset"])
@@ -21,7 +21,7 @@ BATCH_SIZE = 128
 NUM_DEVICES = 1
 
 # check to see if we are working with age or gender
-if DATASET_TYPE == "gender":
+if DATASET_TYPE == "age":
 	# define the number of labels for the age dataset
 	# define the path to the label encoder
 	NUM_CLASSES = 8
