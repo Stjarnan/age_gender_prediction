@@ -1,7 +1,17 @@
+# REC Creation
+# ========================
+# ~/mxnet/tools/im2rec.py "dataset/lists/age_train.lst" ""  --resize 256 --encoding '.jpg' --quality 100
+# ~/mxnet/tools/im2rec.py "dataset/lists/age_val.lst" ""  --resize 256 --encoding '.jpg' --quality 100
+# ~/mxnet/tools/im2rec.py "dataset/lists/age_test.lst" ""  --resize 256 --encoding '.jpg' --quality 100
+# ========================
+# ~/mxnet/tools/im2rec.py "dataset/lists/gender_train.lst" ""  --resize 256 --encoding '.jpg' --quality 100
+# ~/mxnet/tools/im2rec.py "dataset/lists/gender_val.lst" ""  --resize 256 --encoding '.jpg' --quality 100
+# ~/mxnet/tools/im2rec.py "dataset/lists/gender_test.lst" ""  --resize 256 --encoding '.jpg' --quality 100
+
 from os import path
 
 # define the type of dataset we are training ( Age or gender)
-DATASET_TYPE = "gender"
+DATASET_TYPE = "age"
 
 # define the base paths to the dataset and output path
 BASE_PATH = path.sep.join(["dataset"])
@@ -29,14 +39,14 @@ if DATASET_TYPE == "age":
 		"age_le.cpickle"])
 
 	# define the path to the output training, validation, and testing lists
-	TRAIN_MX_LIST = path.sep.join([MX_OUTPUT, "lists/age_train.lst"])
-	VAL_MX_LIST = path.sep.join([MX_OUTPUT, "lists/age_val.lst"])
-	TEST_MX_LIST = path.sep.join([MX_OUTPUT, "lists/age_test.lst"])
+	TRAIN_MX_LIST = path.sep.join([MX_OUTPUT, "lists", "age_train.lst"])
+	VAL_MX_LIST = path.sep.join([MX_OUTPUT, "lists", "age_val.lst"])
+	TEST_MX_LIST = path.sep.join([MX_OUTPUT, "lists", "age_test.lst"])
 
 	# define the path to the output training, validation, and testing recs
-	TRAIN_MX_REC = path.sep.join([MX_OUTPUT, "rec/age_train.rec"])
-	VAL_MX_REC = path.sep.join([MX_OUTPUT, "rec/age_val.rec"])
-	TEST_MX_REC = path.sep.join([MX_OUTPUT, "rec/age_test.rec"])
+	TRAIN_MX_REC = path.sep.join([MX_OUTPUT, "rec", "age_train.rec"])
+	VAL_MX_REC = path.sep.join([MX_OUTPUT, "rec", "age_val.rec"])
+	TEST_MX_REC = path.sep.join([MX_OUTPUT, "rec", "age_test.rec"])
 
 	# path to the means
 	DATASET_MEAN = path.sep.join([OUTPUT_BASE,
@@ -51,16 +61,16 @@ elif DATASET_TYPE == "gender":
 
 	# define the path to the output training, validation, and testing lists
 	TRAIN_MX_LIST = path.sep.join([MX_OUTPUT,
-		"lists/gender_train.lst"])
+		"lists", "gender_train.lst"])
 	VAL_MX_LIST = path.sep.join([MX_OUTPUT,
-		"lists/gender_val.lst"])
+		"lists", "gender_val.lst"])
 	TEST_MX_LIST = path.sep.join([MX_OUTPUT,
-		"lists/gender_test.lst"])
+		"lists", "gender_test.lst"])
 
 	# define the path to the output training, validation, and testing recs
-	TRAIN_MX_REC = path.sep.join([MX_OUTPUT, "rec/gender_train.rec"])
-	VAL_MX_REC = path.sep.join([MX_OUTPUT, "rec/gender_val.rec"])
-	TEST_MX_REC = path.sep.join([MX_OUTPUT, "rec/gender_test.rec"])
+	TRAIN_MX_REC = path.sep.join([MX_OUTPUT, "rec", "gender_train.rec"])
+	VAL_MX_REC = path.sep.join([MX_OUTPUT, "rec", "gender_val.rec"])
+	TEST_MX_REC = path.sep.join([MX_OUTPUT, "rec", "gender_test.rec"])
 
 	# path to the means
 	DATASET_MEAN = path.sep.join([OUTPUT_BASE,
