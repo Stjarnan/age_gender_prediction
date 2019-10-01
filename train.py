@@ -77,7 +77,7 @@ else:
 
 # compile the model
 model = mx.model.FeedForward(
-	ctx=[mx.gpu(0)],
+	ctx=[mx.cpu(0)],
 	symbol=model,
 	initializer=mx.initializer.Xavier(),
 	arg_params=argParams,
@@ -99,7 +99,7 @@ if config.DATASET_MEAN == "age":
 	agh = AgeGenderHelper(config)
 	oneOff = agh.buildOneOffMappings(le)
 	epochEndCBs.append(one_off_callback(trainIter, valIter,
-		oneOff, mx.gpu(0)))
+		oneOff, mx.cpu(0)))
 
 # train the network
 print("[INFO] training network...")
